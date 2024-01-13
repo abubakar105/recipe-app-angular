@@ -1,1 +1,22 @@
-<p>recipe-item works!</p>
+<!-- <a href="#" class="list-group-item clearfix"  (click)="onSelected()" > -->
+    <a *ngIf="recipe" href="#" class="list-group-item clearfix" (click)="onSelected()">
+
+    <div class="row py-2 px-2">
+        <div class="col-md-12">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{recipe.name}}</h5>
+                            <p class="card-text">{{recipe.description}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 px-2 py-2">
+                        <img src="{{recipe.imagePath}}" alt="" class="img-fluid" style="max-height: 150px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</a>
