@@ -1,4 +1,6 @@
-<a href="#" class="list-group-item clearfix" >
+<!-- <a href="#" class="list-group-item clearfix"  (click)="onSelected()" > -->
+    <a *ngIf="recipe" href="#" class="list-group-item clearfix" (click)="onSelected()">
+
     <div class="row py-2 px-2">
         <div class="col-md-12">
             <div class="card mb-3">

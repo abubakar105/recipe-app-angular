@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -7,6 +7,7 @@ import { Recipe } from '../recipe.model';
   styleUrl: './recipe-list.component.css',
 })
 export class RecipeListComponent {
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
   recipes: Recipe[] = [
     new Recipe(
       'test first',
@@ -14,14 +15,18 @@ export class RecipeListComponent {
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStxpBKoJ4d1SQxAVdJU-7lQj99LX4AsbPHwe5a71ubMpuXyThcnwRtb0fYF_FTN1eG7Ec&usqp=CAU'
     ),
     new Recipe(
-      'test first',
+      'test second',
       'sds smdas sjda',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStxpBKoJ4d1SQxAVdJU-7lQj99LX4AsbPHwe5a71ubMpuXyThcnwRtb0fYF_FTN1eG7Ec&usqp=CAU'
     ),
     new Recipe(
-      'test first',
+      'test third',
       'sds smdas sjda',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStxpBKoJ4d1SQxAVdJU-7lQj99LX4AsbPHwe5a71ubMpuXyThcnwRtb0fYF_FTN1eG7Ec&usqp=CAU'
     ),
   ];
+
+  onRecipeSelected(recipe: Recipe) {
+    this.recipeWasSelected.emit(recipe);
+  }
 }
