@@ -10,25 +10,41 @@
   </div>
 </div>
 
-<div class="row">
+<li class="nav-item dropdown" ngbDropdown>
+  <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+    Link
+  </a>
+  <ul class="dropdown-menu open"  ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
+    <li ngbDropdownItem><a class="dropdown-item" (click)="onAddToShoppingList()" href="#">To Shopping List</a></li>
+    <li ngbDropdownItem><a class="dropdown-item" href="#">Another action</a></li>
+    <li ngbDropdownItem><hr class="dropdown-divider"></li>
+    <li ngbDropdownItem><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</li>
+<!-- <div class="row">
   <div class="col-xs-12">
-    <div class="btn-group">
-      <button class="btn btn-primary dropdown-toggle">
-        {{recipe.description}}
-        <span class="caret"> </span>
+    <div class="dropdown open">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="manageRecipeDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Manage Recipe
+        <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Add the Ingrediant</a></li>
-        <li><a href="#">Edit the Ingrediant</a></li>
-        <li><a href="#">Delete the Ingrediant</a></li>
-        <!-- <li><a href="#">Add the Ingrediant</a></li> -->
+      <ul class="dropdown-menu" aria-labelledby="manageRecipeDropdown">
+        <li><a href="#">Add the Ingredient</a></li>
+        <li><a href="#">Edit the Ingredient</a></li>
+        <li><a href="#">Delete the Ingredient</a></li>
       </ul>
     </div>
   </div>
-</div>
+</div> -->
 
 <div class="row">
-  <div class="col-xs-12">Ingrediants</div>
+  <div class="col-xs-12">
+    <ul class="list-group">
+<li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+{{ingredient.name}} - {{ingredient.amount}}
+</li>
+    </ul>
+  </div>
 </div>
 <div class="row">
   <div class="col-xs-12">Description</div>
